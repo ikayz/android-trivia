@@ -45,7 +45,7 @@ class GameWonFragment : Fragment() {
     }
 
     private fun getShareIntent() : Intent {
-        val args = GameWonFragmentArgs.fromBundle(arguments)
+        val args = GameWonFragmentArgs.fromBundle(requireArguments())
         val shareIntent = Intent(Intent.ACTION_SEND)
         shareIntent.setType("text/plain")
             .putExtra(Intent.EXTRA_TEXT, getString(R.string.share_success_text, args.numCorrect, args.numQuestions))
